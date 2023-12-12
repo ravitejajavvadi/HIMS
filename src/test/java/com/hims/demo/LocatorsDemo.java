@@ -65,9 +65,14 @@ public class LocatorsDemo {
 		
 		driver.findElement(By.xpath("//input[@id='tc']//ancestor::form/div[1]/input"));
 		
+		/* Child */
+		driver.findElement(By.xpath("//ul[@id='responsive-menu']//child::li[2]"));
 		
 		
+/*contains*/		
 		
+		driver.findElement(By.xpath("//label[contains(text(),'Last Name [Optional]')]"));
+		driver.findElement(By.xpath("//label[contains(text(),\"First Name\")]//following::input[1]"));
 		
 		
 		
