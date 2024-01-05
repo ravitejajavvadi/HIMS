@@ -19,7 +19,7 @@ public class DemoForFindElementsAnsTablesHandling {
 
 		Thread.sleep(2000);
 		
-		//FindElements
+		                           //FindElements
 		
 		List<WebElement>rows=driver.findElements(By.xpath("//table[@id='domainsGrid']//tbody/tr"));
 		System.out.println("Number of Rows in Table::"+rows.size());
@@ -31,7 +31,7 @@ public class DemoForFindElementsAnsTablesHandling {
 			System.out.println("row_data ::"+e.getText());
 		}
 		
-		//Handling Cell Values
+		                        //Handling Cell Values
 		
 		List<WebElement>cellvalues=driver.findElements(By.xpath("//table[@id='domainsGrid']//tbody/tr[1]/td"));
 		System.out.println("Number of cells  in Table::"+cellvalues.size());
@@ -40,10 +40,25 @@ public class DemoForFindElementsAnsTablesHandling {
 			
 			  for(int j=1;j<=cellvalues.size();j++) {
 			String domain_name=driver.findElement(By.xpath("//table[@id='domainsGrid']//tbody/tr["+i+"]/td["+ j+"]")).getText();
-			System.out.println("Cell Values ::"+domain_name);
+			System.out.println("All Cell Values ::"+domain_name);
 			}
 		}
 		
+		                           /*Dynamic WebTable handling Data*/
+		
+		List<WebElement>cellcount=driver.findElements(By.xpath("//table[@id='domainsGrid']//tbody/tr/td[1]"));
+		 System.out.println("size of rows ::"+cellcount.size());
+		 for(int i=1;i<cellcount.size();i++) { 
+			 
+			String domain_name= cellcount.get(i).getText();
+			if(domain_name.equalsIgnoreCase("ramulul.com")) {
+				System.out.println("Domain Name Prescent");
+				break;
+			}
+			 else {
+					System.out.println("domain not prescent");
+				}
+		 }
 		
 		//FIndElement
 		
